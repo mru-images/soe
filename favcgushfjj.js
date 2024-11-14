@@ -779,11 +779,6 @@ function showSelectedValues() {
 }
 
 populateSelectMenu('menu1', [
-    'SSC Certificate',
-    'Inter Certificate',
-    'Aadhar',
-    'Caste Certificate',
-    'Income Certificate',
     'Photo'
 ]);
 populateSelectMenu('menu2', [
@@ -852,21 +847,6 @@ async function generateImages(startRoll1, endRoll1, startRoll2, endRoll2) {
             const benu = document.getElementById('menu1').value;
             let img = new Image();
             switch (benu) {
-                case "SSC Certificate":
-                    img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/DOCS/" + rollNumber + "_SSC.jpg";
-                    break;
-                case "Inter Certificate":
-                    img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/DOCS/" + rollNumber + "_INTER.jpg";
-                    break;
-                case "Aadhar":
-                    img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/DOCS/" + rollNumber + "_Aadhar.jpg";
-                    break;
-                case "Caste Certificate":
-                    img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/DOCS/" + rollNumber + "_Caste.jpg";
-                    break;
-                case "Income Certificate":
-                    img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/DOCS/" + rollNumber + "_Income.jpg";
-                    break;
                 case "Photo":
                     img.src = "https://iare-data.s3.ap-south-1.amazonaws.com/uploads/STUDENTS/" + rollNumber + "/" + rollNumber + ".jpg";
                     break;
@@ -1323,18 +1303,8 @@ async function gene(startRoll1, endRoll1, startRoll2, endRoll2) {
                     infoButton.style.display = "block";
                 };
 
-                infoButton.onclick = function () {
-                    appendAdditionalLinks(imageItem, rollNumber);
-                    if (typeof clicked === "function") {
-                        clicked(rollNumber.replace('.', '_'));
-                    } else {
-                        console.error("clicked function is not defined.");
-                    }
-                };
-
                 imageItem.appendChild(img);
                 imageItem.appendChild(rollNumberElement);
-                imageItem.appendChild(infoButton);
                 document.getElementById("imageGallery").appendChild(imageItem);
 
                 processedCount++;
