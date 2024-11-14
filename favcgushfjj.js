@@ -878,24 +878,6 @@ async function generateImages(startRoll1, endRoll1, startRoll2, endRoll2) {
                 let rollNumberElement = document.createElement("p");
                 rollNumberElement.classList.add("rollNumber");
                 rollNumberElement.textContent = rollNumber;
-                let infoButton = document.createElement("button");
-                        infoButton.textContent = "Get Info";
-                        infoButton.classList.add("infoButton");
-
-                        img.onclick = function() {
-                            deactivateAllContainers();
-                            imageItem.classList.add("active");
-                            infoButton.style.display = "block";
-                        };
-
-                        infoButton.onclick = function() {
-                            appendAdditionalLinks(imageItem, rollNumber);
-                            if (typeof clicked === "function") {
-                               clicked(rollNumber.replace('.', '_'));
-                            } else {
-                                console.error("clicked function is not defined.");
-                            }
-                        };
                 imageItem.appendChild(img);
                 imageItem.appendChild(rollNumberElement);
                 imageItem.appendChild(infoButton);
