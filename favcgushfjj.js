@@ -1043,7 +1043,6 @@ async function benee(startRoll, endRoll) {
 
                 imageItem.appendChild(img);
                 imageItem.appendChild(rollNumberElement);
-                imageItem.appendChild(infoButton);
                 document.getElementById("imageGallery").appendChild(imageItem);
 
                 processedCount++;
